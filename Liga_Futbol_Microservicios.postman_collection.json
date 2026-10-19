@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "7b8e19c4-5481-4b71-b0e2-6385d3fbc910",
+		"name": "Liga Futbol - Microservicios & Pasarela",
+		"description": "Colección completa de pruebas REST para la arquitectura de microservicios con Spring Cloud, Netflix Eureka y Spring Cloud Gateway MVC.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Pasarela (Gateway - 8080)",
+			"item": [
+				{
+					"name": "Equipos",
+					"item": [
+						{
+							"name": "Registrar Equipo - Real Madrid",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"Real Madrid\"\n}"
+								},
+								"url": {
+									"raw": "{{pasarela_url}}/api/equipos",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"equipos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Equipo - FC Barcelona",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"FC Barcelona\"\n}"
+								},
+								"url": {
+									"raw": "{{pasarela_url}}/api/equipos",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"equipos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Equipo - Atlético Madrid",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"Atlético Madrid\"\n}"
+								},
+								"url": {
+									"raw": "{{pasarela_url}}/api/equipos",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"equipos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Equipos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{pasarela_url}}/api/equipos",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"equipos"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Obtener Equipo por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{pasarela_url}}/api/equipos/1",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"equipos",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validar Nombre Duplicado (400)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nombre\": \"Real Madrid\"\n}"
+								},
+								"url": {
+									"raw": "{{pasarela_url}}/api/equipos",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"equipos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Encuentros",
+					"item": [
+						{
+							"name": "Registrar Partido - RM 3 vs 1 FCB",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"equipoLocalId\": 1,\n    \"equipoVisitanteId\": 2,\n    \"golesLocal\": 3,\n    \"golesVisitante\": 1,\n    \"fecha\": \"2026-10-19\"\n}"
+								},
+								"url": {
+									"raw": "{{pasarela_url}}/api/encuentros",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"encuentros"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Registrar Partido - FCB 2 vs 0 ATM",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"equipoLocalId\": 2,\n    \"equipoVisitanteId\": 3,\n    \"golesLocal\": 2,\n    \"golesVisitante\": 0,\n    \"fecha\": \"2026-10-19\"\n}"
+								},
+								"url": {
+									"raw": "{{pasarela_url}}/api/encuentros",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"encuentros"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Encuentros",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{pasarela_url}}/api/encuentros",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"encuentros"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar Tabla de Posiciones",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{pasarela_url}}/api/encuentros/tabla-posiciones",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"encuentros",
+										"tabla-posiciones"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validar Mismo Equipo (400)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"equipoLocalId\": 1,\n    \"equipoVisitanteId\": 1,\n    \"golesLocal\": 0,\n    \"golesVisitante\": 0,\n    \"fecha\": \"2026-10-19\"\n}"
+								},
+								"url": {
+									"raw": "{{pasarela_url}}/api/encuentros",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"encuentros"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validar Goles Negativos (400)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"equipoLocalId\": 1,\n    \"equipoVisitanteId\": 2,\n    \"golesLocal\": -1,\n    \"golesVisitante\": 2,\n    \"fecha\": \"2026-10-19\"\n}"
+								},
+								"url": {
+									"raw": "{{pasarela_url}}/api/encuentros",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"encuentros"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Validar Equipo Inexistente (400)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"equipoLocalId\": 999,\n    \"equipoVisitanteId\": 2,\n    \"golesLocal\": 1,\n    \"golesVisitante\": 1,\n    \"fecha\": \"2026-10-19\"\n}"
+								},
+								"url": {
+									"raw": "{{pasarela_url}}/api/encuentros",
+									"host": [
+										"{{pasarela_url}}"
+									],
+									"path": [
+										"api",
+										"encuentros"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "2. Microservicio Equipos Directo (8081)",
+			"item": [
+				{
+					"name": "Listar Equipos Directo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{equipos_url}}/api/equipos",
+							"host": [
+								"{{equipos_url}}"
+							],
+							"path": [
+								"api",
+								"equipos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Microservicio Encuentros Directo (8082)",
+			"item": [
+				{
+					"name": "Listar Encuentros Directo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{encuentros_url}}/api/encuentros",
+							"host": [
+								"{{encuentros_url}}"
+							],
+							"path": [
+								"api",
+								"encuentros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tabla Posiciones Directo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{encuentros_url}}/api/encuentros/tabla-posiciones",
+							"host": [
+								"{{encuentros_url}}"
+							],
+							"path": [
+								"api",
+								"encuentros",
+								"tabla-posiciones"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4. Eureka Server (8761)",
+			"item": [
+				{
+					"name": "Consultar Aplicaciones Registradas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{eureka_url}}/eureka/apps",
+							"host": [
+								"{{eureka_url}}"
+							],
+							"path": [
+								"eureka",
+								"apps"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "pasarela_url",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "equipos_url",
+			"value": "http://localhost:8081"
+		},
+		{
+			"key": "encuentros_url",
+			"value": "http://localhost:8082"
+		},
+		{
+			"key": "eureka_url",
+			"value": "http://localhost:8761"
+		}
+	]
+}
